@@ -1,6 +1,15 @@
 {
     "translation": {
         "Title": "Max Hortifruti Shop",
-        "Introduction": "Confira os nossos vegetais e frutas frescos"
+        "Introduction": "Confira os nossos vegetais e frutas frescos",
+        "Banana": "Banana",
+        "Apple": "Maçã",
+        "Cabbage": "Repolho",
+        "Cucumber": "Pepino",
+        "Kiwi": "Kiwi",
+        "Product": "Produto",
+        "Cost": "Custo",
+        "Units": "Unidades",
+        "Currency": "R$"
     }
 }

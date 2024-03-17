@@ -1,6 +1,15 @@
 {
     "translation": {
         "Title": "Max Hortifruti Shop",
-        "Introduction": "Check it out our fresh fruits and vegetables"
+        "Introduction": "Check it out our fresh fruits and vegetables",
+        "Apple": "Apple",
+        "Cabbage": "Cabbage",
+        "Cucumber": "Cucumber",
+        "Kiwi": "Kiwi",
+        "Product": "Product",
+        "Cost": "Cost",
+        "Units": "Units",
+        "Currency": "US$",
+        "Banana": "Banana"
     }
 }
