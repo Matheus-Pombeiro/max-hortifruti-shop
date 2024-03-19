@@ -10,6 +10,9 @@
         "Product": "Produto",
         "Cost": "Custo",
         "Units": "Unidades",
-        "Currency": "R$"
+        "Currency": "R$",
+        "Choose a product": "Escolha um produto",
+        "Add to Cart": "Adicionar ao Carrinho",
+        "Placeholder": "Quantidade que você deseja"
     }
 }

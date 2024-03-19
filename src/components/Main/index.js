@@ -4,6 +4,7 @@ import { useState } from "react";   // Import useState
 
 // Component imports
 import Stock from "../Stock";
+import Form from "../Form";
 
 const Main = () => {    // Main component
     const { t } = useTranslation();     // Translation hook
@@ -40,11 +41,14 @@ const Main = () => {    // Main component
             units: 10
         }
     ]);
+
+    const [cart, setCart] = useState([]);   // Array that contains the products iserted in the client's cart
     
     // JSX
     return (
-        <main className="w-screen">
+        <main className="w-screen my-8 space-y-7">
             <Stock stock = { stock }/>
+            <Form stock = { stock }/>
         </main>
     )
 };

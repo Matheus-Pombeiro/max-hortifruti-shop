@@ -2,6 +2,7 @@
     "translation": {
         "Title": "Max Hortifruti Shop",
         "Introduction": "Check it out our fresh fruits and vegetables",
+        "Banana": "Banana",
         "Apple": "Apple",
         "Cabbage": "Cabbage",
         "Cucumber": "Cucumber",
@@ -10,6 +11,8 @@
         "Cost": "Cost",
         "Units": "Units",
         "Currency": "US$",
-        "Banana": "Banana"
+        "Choose a product": "Choose a product",
+        "Add to Cart": "Add to Cart",
+        "Placeholder": "Quantity that you want"
     }
 }
