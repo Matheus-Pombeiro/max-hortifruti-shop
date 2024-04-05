@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";     // i18next
 
-const UnitsInput = ({ toChange }) => {      // UnitsInput component  
+const UnitsInput = ({ toChange, value }) => {      // UnitsInput component  
     const { t } = useTranslation();     // Translation hook
 
     // JSX
@@ -15,7 +15,8 @@ const UnitsInput = ({ toChange }) => {      // UnitsInput component
                 className="input"
                 id="units"
                 name="units" 
-                min="0" 
+                min="1"
+                value={value} 
                 required={true}
                 placeholder={t("Placeholder")}
                 onChange={e => toChange(e.target.value)}

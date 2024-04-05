@@ -10,8 +10,8 @@ const Form = ({ stock, toAddProduct }) => {    // Form component
     const { t } = useTranslation();     // Translation hook
 
     const [product, setProduct] = useState("");     // useState that will contains the value of the product selected (dropdown)
-    const [cost, setCost] = useState();       // useState that will contains the cost of the product
-    const [units, setUnits] = useState();     // useState that will contains the number of units of the product
+    const [cost, setCost] = useState(Number());       // useState that will contains the cost of the product
+    const [units, setUnits] = useState(Number());     // useState that will contains the number of units of the product
 
     const toSave = (e) => {     // Save the product selected by the user and its units
         e.preventDefault();     // Prevent the automatic behaviour of the form (onSubmit)       
@@ -24,8 +24,8 @@ const Form = ({ stock, toAddProduct }) => {    // Form component
 
         // Clean these useStates
         setProduct("");
-        setCost();
-        setUnits();
+        setCost(Number());
+        setUnits(Number());
     };
 
     const toAddCost = (product) => {    // Set the cost of the product selected
@@ -46,9 +46,11 @@ const Form = ({ stock, toAddProduct }) => {    // Form component
                 <h2 className="text-lg xl:text-xl font-medium text-center">{t("Add to Cart")}</h2>
                 <DropdownSelect 
                     stock = { stock }
+                    value = { product }
                     toChange = { value => [setProduct(value), toAddCost(value)] }    
                 />
-                <UnitsInput 
+                <UnitsInput
+                    value = { units } 
                     toChange = { value => setUnits(Number(value)) }
                 />
                 <button 

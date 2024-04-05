@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";     // i18next
 
-const DropdownSelect = ({ stock, toChange }) => {  // DropdownSelect component  
+const DropdownSelect = ({ stock, value, toChange }) => {  // DropdownSelect component  
     const { t } = useTranslation();     // Translation hook
 
     // JSX
@@ -14,6 +14,7 @@ const DropdownSelect = ({ stock, toChange }) => {  // DropdownSelect component
                 className="input"
                 id="product"
                 name="product"
+                value={value}
                 required={true}
                 onChange={e => toChange(e.target.value)}
             >
