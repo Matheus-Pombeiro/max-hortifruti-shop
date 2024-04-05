@@ -43,12 +43,30 @@ const Main = () => {    // Main component
     ]);
 
     const [cart, setCart] = useState([]);   // Array that contains the products iserted in the client's cart
+
+    // Set the state cart through the onSubmmit of the Form component 
+    const newProductCart = (product) => {
+        // Walks the cart state and verify if the product that is been add to it already exists in the cart
+        const found = cart.findIndex((item) => item.product === product.product);
+        
+        if (found === -1) {     // if not exists, add an entire new product
+            setCart([...cart, product]);
+        } else {    // but if exists, just sum the new units with the old ones
+            setCart([...cart], cart[found].units += product.units);
+        }
+    };
+
+    console.log(cart);
     
     // JSX
     return (
         <main className="w-screen my-8 space-y-7">
             <Stock stock = { stock }/>
-            <Form stock = { stock }/>
+            <Form 
+                stock = { stock }
+                cart = { cart }
+                toAddProduct = { product => newProductCart(product) }
+            />
         </main>
     )
 };
