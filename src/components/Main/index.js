@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";     // i18next
 
-import { useState } from "react";   // Import useState
+import { useState } from "react";   // Import Hooks
 
 // Component imports
 import Stock from "../Stock";
@@ -46,7 +46,7 @@ const Main = () => {    // Main component
 
     // Set the state cart through the onSubmmit of the Form component 
     const newProductCart = (product) => {
-        // Walks the cart state and verify if the product that is been add to it already exists in the cart
+        // Walks the cart state and verify if the product that is have been added to it already exists in the cart
         const found = cart.findIndex((item) => item.product === product.product);
         
         if (found === -1) {     // if not exists, add an entire new product
@@ -54,6 +54,18 @@ const Main = () => {    // Main component
         } else {    // but if exists, just sum the new units with the old ones
             setCart([...cart], cart[found].units += product.units);
         }
+    };
+
+    // Subtract the units of the products in the stock everytime that new units of a product is added to the cart
+    const subtractUnits = (product) => {
+        // Walks the stock state
+        stock.map((item) => {
+            // Verify if the product that is have been added to the cart is the same that exists in the stock
+            if (item.name === product.product) {
+                // If true, subtract the product's units in the stock
+                setStock([...stock], item.units -= product.units);
+            };
+        });
     };
 
     console.log(cart);
@@ -65,7 +77,7 @@ const Main = () => {    // Main component
             <Form 
                 stock = { stock }
                 cart = { cart }
-                toAddProduct = { product => newProductCart(product) }
+                toAddProduct = { product => [newProductCart(product), subtractUnits(product)] }
             />
         </main>
     )

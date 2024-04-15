@@ -5,6 +5,7 @@ import { useState } from "react";   // useState
 // Component imports
 import DropdownSelect from "../DropdownSelect";
 import UnitsInput from "../UnitsInput";
+import { toBeEmpty } from "@testing-library/jest-dom/dist/matchers";
 
 const Form = ({ stock, toAddProduct }) => {    // Form component  
     const { t } = useTranslation();     // Translation hook
@@ -36,6 +37,16 @@ const Form = ({ stock, toAddProduct }) => {    // Form component
         });
     };
 
+    const findProduct = (stock, product) => {
+        let maxUnits;
+        stock.map((item) => {
+            if (item.name === product) {
+                maxUnits = item.units;
+            };
+        });
+        return maxUnits;
+    };
+
     // JSX
     return (
         <section className="section">
@@ -50,8 +61,9 @@ const Form = ({ stock, toAddProduct }) => {    // Form component
                     toChange = { value => [setProduct(value), toAddCost(value)] }    
                 />
                 <UnitsInput
+                    found = { findProduct(stock, product) }
                     value = { units } 
-                    toChange = { value => setUnits(Number(value)) }
+                    toChange = { value => setUnits(value) }
                 />
                 <button 
                     type="submit"
