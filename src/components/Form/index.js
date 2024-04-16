@@ -37,7 +37,7 @@ const Form = ({ stock, toAddProduct }) => {    // Form component
         });
     };
 
-    const findProduct = (stock, product) => {
+    const findProduct = (stock, product) => {   // Helps to find the max quantity of available units of a specific product
         let maxUnits;
         stock.map((item) => {
             if (item.name === product) {
@@ -63,7 +63,7 @@ const Form = ({ stock, toAddProduct }) => {    // Form component
                 <UnitsInput
                     found = { findProduct(stock, product) }
                     value = { units } 
-                    toChange = { value => setUnits(value) }
+                    toChange = { value => setUnits(Number(value)) }
                 />
                 <button 
                     type="submit"
