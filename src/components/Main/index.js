@@ -1,5 +1,3 @@
-import { useTranslation } from "react-i18next";     // i18next
-
 import { useState } from "react";   // Import Hooks
 
 // Component imports
@@ -8,8 +6,6 @@ import Form from "../Form";
 import Cart from "../Cart";
 
 const Main = () => {    // Main component
-    const { t } = useTranslation();     // Translation hook
-
     const [stock, setStock] = useState([    // Array that contains the products of the shop
         {
             id: 1,
@@ -72,8 +68,6 @@ const Main = () => {    // Main component
             };
         });
     };
-
-    console.log(cart);
     
     // JSX
     return (

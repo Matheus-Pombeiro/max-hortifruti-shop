@@ -9,7 +9,7 @@ const TableHead = () => {   // TableHead component
             <tr className="grid grid-cols-3">
                 <th className="text-start">{t("Product")}</th>
                 <th className="text-end">{t("Cost")}</th>
-                <th className="text-end">{t("Units")}</th>
+                <th className="text-end">{t("Units")} (Kg)</th>
             </tr>
         </thead>
     )
