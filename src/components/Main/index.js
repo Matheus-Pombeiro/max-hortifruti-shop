@@ -5,6 +5,7 @@ import { useState } from "react";   // Import Hooks
 // Component imports
 import Stock from "../Stock";
 import Form from "../Form";
+import Cart from "../Cart";
 
 const Main = () => {    // Main component
     const { t } = useTranslation();     // Translation hook
@@ -44,16 +45,20 @@ const Main = () => {    // Main component
 
     const [cart, setCart] = useState([]);   // Array that contains the products iserted in the client's cart
 
+    const [subtotal, setSubtotal] = useState(Number); // State that contains the value of the purchase
+
     // Set the state cart through the onSubmmit of the Form component 
     const newProductCart = (product) => {
-        // Walks the cart state and verify if the product that is have been added to it already exists in the cart
+        // Walks the cart state and verify if the product that is been added to it already exists in the cart
         const found = cart.findIndex((item) => item.product === product.product);
         
         if (found === -1) {     // if not exists, add an entire new product
             setCart([...cart, product]);
         } else {    // but if exists, just sum the new units with the old ones
             setCart([...cart], cart[found].units += product.units);
-        }
+        };
+
+        setSubtotal(a => a + (product.cost * product.units));     // Set the state with the subtotal value of the purchase
     };
 
     // Subtract the units of the products in the stock everytime that new units of a product is added to the cart
@@ -79,6 +84,7 @@ const Main = () => {    // Main component
                 cart = { cart }
                 toAddProduct = { product => [newProductCart(product), subtractUnits(product)] }
             />
+            {cart.length > 0 && <Cart cart = {cart} subtotal = {subtotal} />}
         </main>
     )
 };
