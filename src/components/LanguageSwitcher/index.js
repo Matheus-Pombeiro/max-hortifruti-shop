@@ -4,12 +4,12 @@ const languageOptions = [
     {
         name: "English",
         value: "en",
-        flag: "/assets/british-flag.png"
+        flag: "/assets/usa-flag.png"
     },
     {
         name: "Portuguese",
         value: "pt",
-        flag: "/assets/portuguese-flag.png"
+        flag: "/assets/brazil-flag.png"
     }
 ];
 
