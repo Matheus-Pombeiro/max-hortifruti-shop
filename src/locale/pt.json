@@ -13,6 +13,7 @@
         "Currency": "R$",
         "Choose a product": "Escolha um produto",
         "Add to Cart": "Adicionar ao Carrinho",
-        "Placeholder": "Quantidade que você deseja"
+        "Placeholder": "Quantidade que você deseja",
+        "Clean Cart": "Limpar Carrinho"
     }
 }

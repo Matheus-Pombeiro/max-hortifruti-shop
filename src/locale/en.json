@@ -13,6 +13,7 @@
         "Currency": "US$",
         "Choose a product": "Choose a product",
         "Add to Cart": "Add to Cart",
-        "Placeholder": "Quantity that you want"
+        "Placeholder": "Quantity that you want",
+        "Clean Cart": "Clean Cart"
     }
 }
