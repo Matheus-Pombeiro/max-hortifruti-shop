@@ -55,6 +55,8 @@ const Main = () => {    // Main component
         };
 
         setSubtotal(a => a + (product.cost * product.units));     // Set the state with the subtotal value of the purchase
+
+        
     };
 
     // Subtract the units of the products in the stock everytime that new units of a product is added to the cart
@@ -71,7 +73,7 @@ const Main = () => {    // Main component
     
     // JSX
     return (
-        <main className="w-screen my-8 space-y-7">
+        <main className="w-full my-8 space-y-7">
             <Stock stock = { stock }/>
             <Form 
                 stock = { stock }
