@@ -6,7 +6,7 @@ import Main from "./components/Main";
 const App = () => {   // App component
   // JSX
   return (
-    <div className="App h-full w-dvh bg-green-100 dark:bg-stone-700 flex flex-col justify-between items-center gap-5">
+    <div className="App min-h-screen w-dvh bg-green-100 dark:bg-stone-700 flex flex-col justify-between items-center gap-5">
       <Header />
       <Main />
       <Footer />
