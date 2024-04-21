@@ -14,4 +14,8 @@
     .input {
         @apply w-full p-3 bg-zinc-100 border border-zinc-300 rounded-sm outline-none transition-all ease-in-out duration-150 focus:ring focus:ring-green-400 focus:ring-opacity-20;
     }
+    
+    .button {
+        @apply w-3/6 p-3 bg-blue-500 text-white font-medium rounded hover:bg-blue-700 active:bg-blue-400;
+    }
 }
