@@ -5,9 +5,8 @@ import { useState } from "react";   // useState
 // Component imports
 import DropdownSelect from "../DropdownSelect";
 import UnitsInput from "../UnitsInput";
-import { toBeEmpty } from "@testing-library/jest-dom/dist/matchers";
 
-const Form = ({ stock, toAddProduct }) => {    // Form component  
+const Form = ({ stock, toAddProduct, cleanCart }) => {    // Form component  
     const { t } = useTranslation();     // Translation hook
 
     const [product, setProduct] = useState("");     // useState that will contains the value of the product selected (dropdown)
@@ -65,12 +64,21 @@ const Form = ({ stock, toAddProduct }) => {    // Form component
                     value = { units } 
                     toChange = { value => setUnits(Number(value)) }
                 />
-                <button 
-                    type="submit"
-                    className="w-full p-3 bg-blue-500 text-white font-medium rounded hover:bg-blue-700 active:bg-blue-400"
-                >
-                    {t("Add to Cart")}
-                </button>
+                <div className="w-full flex justify-between gap-2">
+                    <button
+                        type="submit"
+                        className="button"
+                    >
+                        {t("Add to Cart")}
+                    </button>
+                    <button
+                    type="button"
+                        className="button"
+                        onClick={cleanCart}
+                    >
+                        {t("Clean Cart")}
+                    </button>
+                </div>
             </form>      
         </section>
     )

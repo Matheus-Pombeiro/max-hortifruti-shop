@@ -55,8 +55,6 @@ const Main = () => {    // Main component
         };
 
         setSubtotal(a => a + (product.cost * product.units));     // Set the state with the subtotal value of the purchase
-
-        
     };
 
     // Subtract the units of the products in the stock everytime that new units of a product is added to the cart
@@ -70,6 +68,10 @@ const Main = () => {    // Main component
             };
         });
     };
+
+    const cleanCart = () => {   // Clean the cart
+        setCart([]);
+    };
     
     // JSX
     return (
@@ -77,8 +79,8 @@ const Main = () => {    // Main component
             <Stock stock = { stock }/>
             <Form 
                 stock = { stock }
-                cart = { cart }
                 toAddProduct = { product => [newProductCart(product), subtractUnits(product)] }
+                cleanCart= { cleanCart }
             />
             {cart.length > 0 && <Cart cart = {cart} subtotal = {subtotal} />}
         </main>
