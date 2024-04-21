@@ -35,7 +35,7 @@
 <hr>
 
 <p>Date of Conclusion (mm-dd-yyyy): 04/21/2024</p>
-<p>Project's Deploy: <a href="#">Max Hortifruti Shop</a></p>
+<p>Project's Deploy: <a href="https://max-hortifruti-shop.vercel.app/">Max Hortifruti Shop</a></p>
 <p>Author's Name: Matheus V. G. Pombeiro</p>
 <p>Author's Education: Degree in Accounting and Software Engineering Student</p>
 <p>Author's LinkedIn Profile: <a href="https://www.linkedin.com/in/matheus-pombeiro/">Matheus Pombeiro</a></p>
